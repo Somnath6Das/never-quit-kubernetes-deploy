@@ -45,6 +45,7 @@ kubectl get pod
 // delete pod
 
 kubectl delete pod <pod-name>
+kubectl delete -f "./simple-node-app/k8s/simpleapp-pod.yaml"
 
 // delete service
 
