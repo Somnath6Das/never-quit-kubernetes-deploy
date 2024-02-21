@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: simple-app-con
-          image: mukeshphulwani66/simple-app
+          image: somnath8das/simple-node-app
           ports: 
             - containerPort: 5000
