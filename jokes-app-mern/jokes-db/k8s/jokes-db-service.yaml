@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata: 
-  name: mongodb-cluster-ip-serv
+  name: mongodb-cluser-ip-serv
 spec:
   selector:
     name: mongodb
