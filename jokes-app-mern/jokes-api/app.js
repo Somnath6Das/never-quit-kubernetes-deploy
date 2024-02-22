@@ -9,11 +9,9 @@ const jokeModel = mongoose.model('joke')
 
 main().catch(err => console.log(err));
 
-
+// `mongodb+srv://somnath8das:1234@cluster0.4ztbfsl.mongodb.net/jokesapp?`
 async function main() {
-   await mongoose.connect(
-     `mongodb+srv://somnath8das:1234@cluster0.4ztbfsl.mongodb.net/jokesapp?`
-   );  
+   await mongoose.connect(`${process.env.MONGO_URI}`);  
 }
 
 mongoose.connection.on('connected',()=>{
