@@ -25,3 +25,9 @@ docker run somnath8das/hello-docker
 
 // to run node app on port
 docker run -p 4000:4000 somnath8das/hello-docker
+
+
+// update image and push
+docker image build -t somnath8das/jokes-api:2.0 "./jokes-app-mern\jokes-api"
+
+docker push somnath8das/jokes-api:2.0

@@ -14,10 +14,13 @@ spec:
     spec:
       containers:
         - name: jokes-api-con
-          # image: somnath8das/jokes-api
           image: somnath8das/jokes-api:2.0
+          # image: somnath8das/jokes-api
           ports: 
             - containerPort: 5000
-          env:
-            - name: MONGO_URI
-              value: "mongodb://mongodb-cluster-ip-serv/jokesdb"
+          # env:
+          #   - name: MONGO_URI
+          #     value: "mongodb://mongodb-cluster-ip-serv/jokesdb"
+          envFrom:
+            - configMapRef:
+                name: jokes-api-config
