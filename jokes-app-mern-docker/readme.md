@@ -4,7 +4,7 @@
 docker container run --name mongoc1 -p 5000:27017 -d mongo:6.0.5
 
 // get ip information of mongo container >
-docker container inspect mongoC1 
+docker container inspect mongoC1
 
 // build node server container >
 docker image build -t node-api ./jokes-api
@@ -12,8 +12,13 @@ docker image build -t node-api ./jokes-api
 // run node server container >
 docker container run --name nodec1 -d node-api
 
+// get container id
+docker ps
+
 // see container logs >
 docker logs <container-id>
+
+----------------------------------------------------------------------------------------
 
 2. production level mode:
 
@@ -32,9 +37,19 @@ docker image build -t node-api ./jokes-api
 // run node container with network
 docker container run --name nodec1 --network mern-network -d node-api
 
+// run docker compose on detached mode
+docker compose up -d
 
+// stop docker compose
+docker compose down
 
+----------------------------------------------------------------------------------------
 
+// see database
 
-
-
+go to mongo container  cli on docker
+> mongosh  <-
+> show dbs <-
+> use somdb <-
+> show collections <-
+> db.jokes.find()  <-

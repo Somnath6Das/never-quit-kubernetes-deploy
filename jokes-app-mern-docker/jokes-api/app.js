@@ -13,7 +13,9 @@ main().catch(err => console.log(err));
 // dev local mongo url => mongodb://host.docker.internal:5000/somdb
 // after network build with container we can give container name
 async function main() {
-   await mongoose.connect("mongodb://mongodb:27017/somdb");  
+   await mongoose.connect(
+     `mongodb://${process.env.USERNAME}:${process.env.PASSWORD}@mongodb:27017/somdb?authSource=admin`
+   );  
 }
 
 

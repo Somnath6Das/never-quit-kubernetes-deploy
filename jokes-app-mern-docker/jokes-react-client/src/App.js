@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import JokeList from './JokeList';
-import { BASE_URL } from './baseApiUrl';
+import { useEffect, useState } from "react";
+import "./App.css";
+import JokeList from "./JokeList";
+import { BASE_URL } from "./baseApiUrl";
 // const jokes = [
 //   'Learn programming to understand programming jokes.',
 //   'Code never lies,comments sometimes do.',
@@ -12,31 +12,28 @@ import { BASE_URL } from './baseApiUrl';
 //   'Golden rule of programming - If it works dont touch it.'
 // ];
 
-
 function App() {
-  const [jokes,setJokes] = useState([])
-  
-  const fetchJoke = async ()=>{
-    try{
-        const res =  await fetch(`${BASE_URL}/getJokes`)
-        const result = await res.json()
-        setJokes(result.jokes) 
-    }catch(err){
-        console.log(err)
-        alert("something went wrong")
+  const [jokes, setJokes] = useState([]);
+
+  const fetchJoke = async () => {
+    try {
+      const res = await fetch(`${BASE_URL}/getJokes`);
+      const result = await res.json();
+      setJokes(result.jokes);
+    } catch (err) {
+      console.log(err);
+      alert("something went wrong");
     }
- 
-  }
+  };
 
-
-  useEffect(()=>{
-   fetchJoke()
-  },[])
+  useEffect(() => {
+    fetchJoke();
+  }, []);
   return (
     <div className="App">
-       <h1>Programming Jokes</h1>
-       <hr />
-       <JokeList jokes={jokes} />
+      <h1>Docker Desktop</h1>
+      <hr />
+      <JokeList jokes={jokes} />
     </div>
   );
 }
